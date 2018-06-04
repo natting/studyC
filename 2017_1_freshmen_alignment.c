@@ -49,27 +49,28 @@ int find_min_end(int start_index, int prev_end)
 	printf ("start_index= %d, prev_end=%d\n", start_index, prev_end);
 #endif
 	for (int i = start_index; i < N; i++) {
-		if (project_info[i].start_date > prev_end && project_info[i].end_date <= min) {
+		if (project_info[i].start_date > prev_end
+			&& project_info[i].end_date <= min) {
 			min = project_info[i].end_date;
 			min_index = i;
 #if 0
 			printf ("take it : %d ~ %d, i = %d, min=%d\n",
-							project_info[i].start_date, project_info[i].end_date,
-							i, min);
+					project_info[i].start_date, project_info[i].end_date,
+					i, min);
 #endif
 		} 
 #if 0
 		else {
 			printf ("skip : %d ~ %d, i = %d, min=%d\n",
-							project_info[i].start_date, project_info[i].end_date,
-							i, min);
+					project_info[i].start_date, project_info[i].end_date,
+					i, min);
 		}
 #endif
 	}
 #if 0
 	printf("found : min_index = %d, %d ~ %d\n", min_index, 
-				project_info[min_index].start_date,
-				 project_info[min_index].end_date);
+			project_info[min_index].start_date,
+			project_info[min_index].end_date);
 #endif
 	return min_index;
 }
@@ -104,7 +105,7 @@ int main(void){
 	cnt = 1;//시작 찾음.
 #if 0	// i 부터 다시 시작.
 	printf ("start = %d.\nfind : %d ~ %d \n", end_min_index,
-				 project_info[end_min_index].start_date, project_info[end_min_index].end_date);
+			project_info[end_min_index].start_date, project_info[end_min_index].end_date);
 #endif
 	i = end_min_index;
 	do {
