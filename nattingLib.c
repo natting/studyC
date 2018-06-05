@@ -22,7 +22,6 @@ int rise_up(void) {
 	}
 }
 
-
 int main() {
 	int N;
 	int distance[1000] = {0, };
