@@ -1,4 +1,6 @@
 #include <stdio.h>
+int N = 100;
+int data[N];
 
 void swap(int *i, int *j) {
 	int temp;
@@ -6,6 +8,20 @@ void swap(int *i, int *j) {
 	*i = *j;
 	*j = temp;
 }
+// 오름차순 정리 in array
+int rise_up(void) {
+	int i, j, temp;
+	for (i = 0; i < N; i++) {
+		for (j = 0; j < N-1; j++) {
+			if (data[j] > data[j+1]) {
+				temp = data[j];
+				data[j] = data[j+1];
+				data[j+1] = temp;
+			}
+		}
+	}
+}
+
 
 int main() {
 	int N;
