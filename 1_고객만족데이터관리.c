@@ -1,14 +1,14 @@
 #include <stdio.h>
 
-int M;					// 반복 인정 회수
+int M;			// 반복 인정 회수
 char S[100000 + 10];	// 조사 문자열
 
 int main(void)
 {
-	int i, j;			// 문자열 S의 어떤 문자를 지시
-	int len;		// 문자열 S의 길이
+	int i, j;	// 문자열 S의 어떤 문자를 지시
+	int len;	// 문자열 S의 길이
 	char r_char;	// 반복되는 문자
-	int r_cnt;		// 반복 회수
+	int r_cnt;	// 반복 회수
 
 	// 데이터 읽기
 	scanf("%d", &M);
