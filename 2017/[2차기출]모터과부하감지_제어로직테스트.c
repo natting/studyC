@@ -6,6 +6,9 @@
 int testParameters[][10] = {
 	{ 4, 1600, 2010, 1900, 1501, },
 	// TODO: 항목 1-1, 1-2, 1-3. 테스트 입력을 추가하시오.
+	{ 7, 500, 2100, 1600, 0, 1900, 1801, 2000 },// 부하 가중치의 합산이 9
+	{ 7, 500, 2100, 1600, 0, 1900, 1600, 2100 },// 부하 가중치의 합산이 10
+	{ 7, 500, 2100, 1600, 0, 1900, 1900, 2100 },// 부하 가중치의 합산이 11
 };
 
 #include "detector.h"
@@ -38,25 +41,59 @@ int detectOverload()
 }
 */
 
+// TODO :
+// current 값을 fake로 전달하기 위해
+static int fakeCurrent;
+// current 값으로 fakeCurret 세팅
+static void setFakeCurrentLoad(int current)
+{
+	fakeCurrent = current;
+}
+
 int getCurrentLoad()
 {
 	// TODO: 원하는 부하량을 전달할 수 있도록 fake/stub을 구현하시오.
-
-	return 0; // FIXME: 필요한 코드로 대체하시오.
+	//return 0; // FIXME: 필요한 코드로 대체하시오.
+	return fakeCurrent;
 }
+
 
 void test_2_1()
 {
 	// TODO: 항목 2-1. 
 	// 전류 부하가 1900, 1600, 0, 2100 순으로 감지되는 경우를 재현하는 코드를 작성하시오.
+	setFakeCurrentLoad(1900);
+	detectOverload();
+
+	setFakeCurrentLoad(1600);
+	detectOverload();
+
+	setFakeCurrentLoad(0);
+	detectOverload();
+
+	setFakeCurrentLoad(2100);
+	detectOverload();
 }
 
 void test_2_2()
 {
 	// TODO: 항목 2-2. 
 	// 전류 부하가 0, 1900, 1600, 2100, 1600 순으로 감지되는 경우를 재현하는 코드를 작성하시오.
-}
+	setFakeCurrentLoad(0);
+	detectOverload();
 
+	setFakeCurrentLoad(1900);
+	detectOverload();
+
+	setFakeCurrentLoad(1600);
+	detectOverload();
+
+	setFakeCurrentLoad(2100);
+	detectOverload();
+
+	setFakeCurrentLoad(1600);
+	detectOverload();
+}
 
 /* main 함수는 작성한 테스트 케이스 검증용임 */
 /* 필요에 따라서 마음대로 변경하어도 무방함 */
