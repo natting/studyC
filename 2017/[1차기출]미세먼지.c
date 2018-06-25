@@ -19,6 +19,7 @@ int main(void){
 		}
 	}
 	
+	min_sum = 0x7FFFFFFFFFFFFFFFLL;//FIXED
 	// 어떤 시간대(열)가 가장 적은 미세먼지 변화량 합을 가지는지 계산하는 부분
 	for (j = 0; j < N; j++) {
 		sum = 0;//FIXED
