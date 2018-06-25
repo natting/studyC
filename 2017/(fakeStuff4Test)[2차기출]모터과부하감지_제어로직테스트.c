@@ -57,7 +57,6 @@ int getCurrentLoad()
 	return fakeCurrent;
 }
 
-
 void test_2_1()
 {
 	// TODO: 항목 2-1. 
