@@ -38,15 +38,12 @@ int detectOverload()
 }
 */
 
-
-
 int getCurrentLoad()
 {
 	// TODO: 원하는 부하량을 전달할 수 있도록 fake/stub을 구현하시오.
 
 	return 0; // FIXME: 필요한 코드로 대체하시오.
 }
-
 
 void test_2_1()
 {
@@ -64,8 +61,6 @@ void test_2_2()
 /* main 함수는 작성한 테스트 케이스 검증용임 */
 /* 필요에 따라서 마음대로 변경하어도 무방함 */
 /* main 함수는 채점과 무관함 */
-
-
 int main()
 {
 	printTestResults();  // testParameter에 기록한 테스트 입력으로 실행한 결과를 출력해준다. (수험자 확인용)
