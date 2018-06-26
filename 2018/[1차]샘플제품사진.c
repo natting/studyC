@@ -66,15 +66,16 @@ int solve(void){
 	int i, j, cnt = 0, min = 1<<30;
 	new_id();
 	sort(0, N-1);
-	for(i=0;i<50000;i++) check[i] = 0;
-	i=j=0;
-	for(;;){
-		while((i<N) && (max_id_cnt > cnt)){
-			if(check[A[i].ID]++ == 0) cnt++;
+	for (i = 0; i < 50000; i++) 
+		check[i] = 0;
+	i = j = 0;
+	for (;;) {
+		while ((i < N) && (max_id_cnt > cnt)){
+			if (check[A[i].ID]++ == 0) cnt++;
 			i++;
 		}
-		if(max_id_cnt != cnt) break;
-		while(check[A[j].ID]>1){
+		if (max_id_cnt != cnt) break;
+		while (check[A[j].ID] > 1) {
 			check[A[j].ID]--; j++;
 		}
 		if(min > A[i-1].X - A[j].X) min = A[i-1].X - A[j].X;
