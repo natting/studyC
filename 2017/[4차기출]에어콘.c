@@ -27,27 +27,29 @@ int Check_Temp_and_Control(int diff)
 	static int cur_temp = INIT_TEMPERATURE;	// 현재 온도 값
 	cur_temp += diff;
 
-	if (cur_temp > max_temp || cur_temp < min_temp)		// 범위 벗어났을 경우
-	{
+	// 범위 벗어났을 경우
+	if (cur_temp > max_temp || cur_temp < min_temp)	{
 		flag_control_temp = 1;
 		cur_temp = INIT_TEMPERATURE;
 		return 1;
 	}
-	else return 0;
+	else 
+		return 0;
 }
 
 int Check_Humidity_and_Control(int diff)
 {
-	static int cur_humidity = INIT_HUMIDITY;	// 현재 습도 값
+	static int cur_humidity = INIT_HUMIDITY;// 현재 습도 값
 	cur_humidity += diff;
 
-	if (cur_humidity > max_humidity || cur_humidity < min_humidity)		// 범위 벗어났을 경우
-	{
+	// 범위 벗어났을 경우
+	if (cur_humidity > max_humidity || cur_humidity < min_humidity)	{
 		flag_control_humidity = 1;
 		cur_humidity = INIT_HUMIDITY;
 		return 1;
 	}
-	else return 0;
+	else 
+		return 0;
 }
 
 void Reset_Flag(void)
@@ -91,14 +93,12 @@ void Input_Data(void)
 	scanf("%d %d", &min_humidity, &max_humidity);
 
 	// 온도 변화량 입력
-	for (i = 1; i <= N; i++)
-	{
+	for (i = 1; i <= N; i++) {
 		scanf("%d", &Temperature_diff[i]);
 	}
 	
 	// 습도 변화량 입력
-	for (i = 1; i <= N; i++)
-	{
+	for (i = 1; i <= N; i++) {
 		scanf("%d", &Humidity_diff[i]);
 	}
 }
