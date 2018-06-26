@@ -10,14 +10,10 @@ int testInput_1_1[8] = { 51, 102, 29, 52, 102, 33, 55, 104}; // TODO: 항목 1-1
 int testInput_1_2[8] = { 100, 102, 103, 101, 35, 77, 99, 49 }; // TODO: 항목 1-2 터보 1 total = 32
 int testInput_1_3[8] = { 102, 103, 104, 52, 31, 49, 51, 55 }; // TODO: 항목 1-3 터보 1+, total=36.
 
-
-
-
 #include "./lib/device.h"
 /* device.h에는 대략적으로 아래와 같이 구현된 함수의 정의가 있다.
  * 구현 참고용이므로 본 주석을 풀어서 아래 코드를 사용해서는 안된다.  (device.h에 포함된 내용임)
  * 아래 주석을 해제하여 사용하는 경우 정상적으로 동작하지 않는다.
-
 
 /*
  *  현재 센서에서 감지한 미세먼지 측정값을 반환하는 인터페이스
@@ -48,7 +44,9 @@ int determineWindStrength()
 }
 */
 
-int data1[7] = { 110, 108, 80, 	45, 60, 90, 91 };
+int currentIndex;
+//int data1[7] = { 110, 108, 80, 	45, 60, 90, 91 };
+int *testData;
 
 int getCurrentPM()
 {
@@ -56,7 +54,7 @@ int getCurrentPM()
 	//return 0; // FIXME: 필요한 코드로 대체하시오.
 	int result;
 	
-	//result = data1[index];
+	result = testData[currentIndex];
 	
 	return result;
 }
@@ -66,14 +64,28 @@ void test_2_1()
 {
 	// TODO: 항목 2-1. 
 	// 미세 먼지 단계가 (매우 나쁨, 매우 나쁨, 나쁨, 보통, 나쁨, 나쁨, 나쁨) 순으로 7개가 감지되는 경우를 재현하는 코드를 작성하라.
-	//int data1[7] = { 110, 			108, 			80, 	45, 	60, 90, 91 };
-	determineWindStrength();
+	int dataInput[7] = { 110, 108, 80, 45, 60, 90, 91 };
+	
+	currentIndex = 0;
+	testData = dataInut;
+	for (int i = 0; i < 7; i++) {
+		determineWindStrength();
+		currentIndex++;
+	}
 }
 
 void test_2_2()
 {
 	// TODO: 항목 2-2. 
-	// 세 먼지 단계가 (매우 나쁨, 나쁨, 나쁨, 매우 나쁨, 나쁨, 좋음, 나쁨, 매우 나쁨, 나쁨, 매우 나쁨, 나쁨) 순으로 11개가 감지되는 경우를 재현하는 코드를 작성하라.
+	// 미세 먼지 단계가 (매우 나쁨, 나쁨, 나쁨, 매우 나쁨, 나쁨, 좋음, 나쁨, 매우 나쁨, 나쁨, 매우 나쁨, 나쁨) 순으로 11개가 감지되는 경우를 재현하는 코드를 작성하라.
+	int dataInput[11] = { 110, 108, 80, 45, 60, 90, 91 };
+	
+	currentIndex = 0;
+	testData = dataInut;
+	for (int i = 0; i < 11; i++) {
+		determineWindStrength();
+		currentIndex++;
+	}
 }
 
 
