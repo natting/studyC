@@ -98,13 +98,11 @@ void test_2_1(void)
 {
 	// TODO: 항목 2-1. 
 	// 최소 입력 전력, 최대 입력 전력, LED의 개수가 각각 3000, 4000, 5 이고 
-  // LED들의 소비 전력이 300, 400, 400, 600, 300 인 경우를 재현하는 코드를 작성하시오.
+	// LED들의 소비 전력이 300, 400, 400, 600, 300 인 경우를 재현하는 코드를 작성하시오.
 	int inputPowers[] = { 300, 400, 400, 600, 300 };
 	currentLed = 0;
 	fakeLEDPowers = inputPowers;
-
 	initMachine(3000, 4000, 5);
-
 	checkCondition();
 }
 
@@ -112,13 +110,11 @@ void test_2_2(void)
 {
 	// TODO: 항목 2-2. 
 	// 최소 입력 전력, 최대 입력 전력, LED의 개수가 각각 1000, 2000, 6 이고 
-  // LED들의 소비 전력이 200, 300, 100, 50, 400, 300 인 경우를 재현하는 코드를 작성하시오.
+	// LED들의 소비 전력이 200, 300, 100, 50, 400, 300 인 경우를 재현하는 코드를 작성하시오.
 	int inputPowers[] = { 200, 300, 100, 50, 400, 300 };
 	currentLed = 0;
 	fakeLEDPowers = inputPowers;
-
 	initMachine(1000, 2000, 6);
-
 	checkCondition();
 }
 
@@ -127,6 +123,5 @@ int main(void)
 	printTestResults();
 	test_2_1();
 	test_2_2();
-	
 	return 0;
 }
