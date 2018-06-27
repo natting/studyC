@@ -24,8 +24,8 @@ void Sorting(void){
 	DATA temp;
 
 	// 프로젝트 종료일 기준 오름차순 정렬
-	for (i=0;i<N-1;i++){
-		for (j=0;j<N-1-i;j++){
+	for (i = 0; i < N - 1; i++) {
+		for (j = 0; j < N - 1 - i; j++) {
 			if (project_info[j].end_date > project_info[j + 1].end_date){
 				temp = project_info[j];
 				project_info[j] = project_info[j + 1];
@@ -41,7 +41,7 @@ int Solve(void){
 	
 	// 이전 배정 프로젝트 종료일과 i프로젝트의 시작일 겹치지 않을 경우 배정 선택
 	for (i = 0; i < N; i++){
-		if (last_date < project_info[i].start_date){
+		if (last_date < project_info[i].start_date) {
 			last_date = project_info[i].end_date;
 			cnt++; // 배정된 프로젝트 수 count up
 		}
@@ -55,7 +55,6 @@ int main(void){
 
 	Data_Input(); // 입력 함수 호출
 	Sorting(); // 프로젝트 정렬
-
 	sol = Solve(); // Greedy algorithm으로 최대 배정 수 결정
 
 	printf("%d\n", sol); // 결과 출력
