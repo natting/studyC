@@ -1,6 +1,8 @@
 root = true
 indent_style = tab
 indent_size = 4
+max_line_length = 80
 [*.c]
 indent_style = tab
 indent_size = 4
+max_line_length = 80
