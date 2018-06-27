@@ -1,7 +1,5 @@
 #include <stdio.h>
-
 #define MAX_LED 20
-
 typedef struct LedConfig_
 {
 	int powerMin;
@@ -85,9 +83,8 @@ int checkCondition()
 	return 1;
 }
 */
-int currentLed;
-
-int* fakeLEDPowers;
+int currentLed;// index
+int* fakeLEDPowers;// temp pointer
 int getPowerOf(int index)
 {
 	// TODO: 원하는 LED 전력을 전달할 수 있도록 fake/stub을 구현하시오.
@@ -102,9 +99,7 @@ void test_2_1(void)
 	int inputPowers[] = { 300, 400, 400, 600, 300 };
 	currentLed = 0;
 	fakeLEDPowers = inputPowers;
-
 	initMachine(3000, 4000, 5);
-
 	checkCondition();
 }
 
@@ -116,9 +111,7 @@ void test_2_2(void)
 	int inputPowers[] = { 200, 300, 100, 50, 400, 300 };
 	currentLed = 0;
 	fakeLEDPowers = inputPowers;
-
 	initMachine(1000, 2000, 6);
-
 	checkCondition();
 }
 
@@ -127,6 +120,5 @@ int main(void)
 	printTestResults();
 	test_2_1();
 	test_2_2();
-	
 	return 0;
 }
