@@ -54,7 +54,6 @@ int getCurrentPM()
 	return tmpCurrentPM[index]; // FIXME: 필요한 코드로 대체하시오.
 }
 
-
 void test_2_1()
 {
 	int tmp[] = { 101, 101, 100, 50, 100, 100, 100 };	// TODO: 항목 2-1. 
@@ -80,7 +79,6 @@ void test_2_2()
 			determineWindStrength();
 			index ++;
 	}
-
 }
 
 /* main 함수는 작성한 테스트 케이스 검증용임 */
@@ -89,10 +87,7 @@ void test_2_2()
 int main()
 {
 	printTestResults();  // testInput에 기록한 테스트 입력으로 실행한 결과를 출력해준다. (수험자 확인용)
-
 	test_2_1();
-
 	test_2_2();
-
 	return 0;
 }
