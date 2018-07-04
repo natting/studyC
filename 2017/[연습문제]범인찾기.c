@@ -17,7 +17,7 @@ void Input_Data(void) {
 }
 
 // cnt 제일 max 인 string 을 찾기 위해서..
-void max_string(void)
+int max_string(void)
 {
 	int max = cnt[0];
 	int ret = 0;
