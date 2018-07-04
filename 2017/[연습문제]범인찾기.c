@@ -12,7 +12,7 @@ void Input_Data(void) {
 	scanf("%d", &N);
 	for (i = 0; i < N; i++) {
 		scanf("%s", &ystring[i]);
-		cnt[i] = 0;
+		cnt[i] = 0;//일치하는 string 갯수 저장하기 위한 버퍼 초기화 
 	}
 }
 
