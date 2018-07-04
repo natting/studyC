@@ -44,18 +44,17 @@ void Find_String()
 	int i;
 	char * start_addr;
 	char * find_addr;
-	// ystring 1000명을 1번부터 검색
-	// cstring 끝까지 몇명인지 검색
+	// ystring N명을 cstring 처음부터 검색, 끝까지 몇명인지 검색
 	for (i = 0; i < N; i++) {
 		start_addr = &cstring[0];
 		do {
 			find_addr = strstr(start_addr, &ystring[i]);
 			if (find_addr) {
-				found ++;
-				cnt[i]++;
+				found ++;// found 가 끝까지 0 이면 found NULL
+				cnt[i]++;// max 값을 나중에 비교하자..
 				start_addr = find_addr + 1;//찾은것 다음 주소부터 다시 검색
 			} else {
-				//printf("DONE searching \n");
+				//printf("found nothing..DONE searching \n");
 				break;
 			}
 		} while (1);
