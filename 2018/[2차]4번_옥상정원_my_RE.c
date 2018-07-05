@@ -20,7 +20,7 @@ int main(void){
 	//	코드를 작성하세요
 	for (int i = 0; i < N; i++) {
 		std = H[i];
-		for (int j = i+1; j < N; j++) {
+		for (int j = i + 1; j < N; j++) {
 			if (std > H[j]) cnt ++;
 			else 
 				break;
