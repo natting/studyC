@@ -17,24 +17,35 @@ int main(void)
 		scanf("%d", &TV[i]);
 	}
 
-	// 모델 별 판매수량을 카운트
+	// 모델 별 판매수량을 카운트 방법임 : 알아두자....ToDo
+	// sold[1]++, sold[3]++, .... 1/2/3 모델들에 대한 판매댓수를 카운팅함. 
 	for (i = 0; i < N; i++) {
 		sold[TV[i]]++;
 	}
 
-	// 새로운 방법에 의한 인기도 계산
+#if 0
+	// 기존 방법에 의한 인기도 계산 (인기도 = 판매수량)
+	for (i = 1; i <= M; i++) {
+		score[i] = sold[i];
+	}	
+#else 
+	// 새로운 방법에 의한 인기도 계산 : 연속판매댓수를 얻기위함. same[]에 저장
 	cnt = 1;
 	same[TV[0]] = 1;
 	for (i = 1; i < N; i++) {
-		if (TV[i] == TV[i - 1]) cnt++;
-		else cnt = 1;
-		if (same[TV[i]] < cnt) same[TV[i]] = cnt;
-	}
+		if (TV[i] == TV[i - 1]) 
+			cnt++;	// 연속판매됨
+		else 
+			cnt = 1; // 연속판매 중지: cnt reset
 
+		if (same[TV[i]] < cnt)
+			same[TV[i]] = cnt;
+	}
+	// 연속판매를 곱해서 점수 새로 계산
 	for (i = 1; i <= M; i++) {
 		score[i] = sold[i] * same[i];
 	}
-
+#endif
 	// 인기도가 가장 높은 모델번호 찾기
 	max = 1;
 	for (i = 2; i <= M; i++) {
