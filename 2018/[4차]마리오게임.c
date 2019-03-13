@@ -1,3 +1,5 @@
+// 예제에서 pattern 을 찾아서 구현함.
+// max가 되는 patten 은 이전값보다 커지는 부분만 골라 먹기..
 #include <stdio.h>
 
 int N;//버섯 수
