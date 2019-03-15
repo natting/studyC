@@ -28,6 +28,7 @@ void Input_Data(void){
 			dist[i][j] = 1000000;//충분히 큰수로 세팅
 		}
 	}
+	dist[0][0] = 0;//start always 0
 }
 
 int main(void){
