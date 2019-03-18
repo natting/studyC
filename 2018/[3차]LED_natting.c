@@ -28,7 +28,7 @@ int main(void){
 		}
 	}
 	
-#if 1
+#if 0
 	for (int j = 0; j < cnt; j++) {
 		printf ("%d ", pat[j]);
 	}
