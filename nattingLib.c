@@ -8,6 +8,18 @@ void swap(int *i, int *j) {
 	*i = *j;
 	*j = temp;
 }
+// =========================================
+// sorting LAST
+int sorting (void) {
+	int i,j,N;
+	for (i = 0; i < N-1; i++) {
+		for (j = i+1; j < N; j++) {
+			if (a > b) // or a < b
+				swap(a,b);
+		}
+	}
+}
+// =========================================
 // 오름차순 정리 in array
 int rise_up(void) {
 	int i, j, temp;
@@ -21,7 +33,6 @@ int rise_up(void) {
 		}
 	}
 }
-// sorting
 int sorting (void)
 {
 	int i, j, temp;
