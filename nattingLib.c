@@ -12,9 +12,24 @@ void swap(int *i, int *j) {
 int rise_up(void) {
 	int i, j, temp;
 	for (i = 0; i < N; i++) {
-		for (j = 0; j < N-1; j++) {
+		for (j = i; j < N-1; j++) {
 			if (data[j] > data[j+1]) {
 				temp = data[j];
+				data[j] = data[j+1];
+				data[j+1] = temp;
+			}
+		}
+	}
+}
+// sorting
+int sorting (void)
+{
+	int i, j, temp;
+	for (i = 0; i < N; i++) {
+		for (j = i; j < N-1; j++) {
+			if (data[j] > data[j+1]) {
+				// swap
+				temp  = data[j];
 				data[j] = data[j+1];
 				data[j+1] = temp;
 			}
