@@ -30,6 +30,8 @@ int main(void){
 	int sx, sy;//start point..
 	int count = 0;
 	int max = 0;
+	// 시작 좌표부터 사각형 그려서 찾는 방법
+	// BUT 시작점이 좌표가 아닌 부분은??? 
 	for (i = 0; i < M; i++) {
 		sy = y[i]; sx = x[i];
 		for (w = 1; w < L/2; w++) {
