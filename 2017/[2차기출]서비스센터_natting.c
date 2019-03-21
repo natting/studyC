@@ -17,14 +17,11 @@ int find_min_eng()
 	int min_v = engineer[1];
 	int min_eng=1;
 	for (int i = 1; i <= N; i++) {
-		//printf ("find_min : engineer[%d]=%d, min_v=%d \n", i, engineer[i], min_v);
 		if (engineer[i] < min_v) {
 			min_v = engineer[i];
-			//printf ("min engineer = %d \n", i);
 			min_eng = i;
 		}
 	}
-	//printf ("min engineer = %d, val = %d \n", min_eng, engineer[min_eng]);
 	return min_eng;
 }
 
@@ -35,10 +32,8 @@ int main(void){
 	int index = 0;
 	for (int i = 1; i <= Q; i++) {
 		index = find_min_eng();
-		//printf ("engineer[%d] = %d + %d \n", index, engineer[index], T[i]);
 		engineer[index] += T[i];
 	}
-	//sol = find_max_eng();
 	int max = 0;
 	for (int i = 1; i <= N; i++) {
 		if (engineer[i] > max)
